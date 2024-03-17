@@ -12,6 +12,7 @@ import org.homework.fujitsuhomework2024.util.UnixTimestampConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+@Order(2)
 @Service
 public class WeatherService {
     private static final Logger log = LoggerFactory.getLogger(WeatherService.class);
@@ -32,6 +34,7 @@ public class WeatherService {
 
     @Autowired
     public WeatherService(RestTemplate restTemplate, WeatherRepository weatherRepository, UnixTimestampConverter unixTimestampConverter) {
+        BusinessRulesService businessRulesService;
         this.restTemplate = restTemplate;
         this.weatherRepository = weatherRepository;
         this.unixTimestampConverter = unixTimestampConverter;
@@ -68,6 +71,7 @@ public class WeatherService {
                     weatherRepository.save(observation);
                 }
             }
+            log.info("Saved weather data to database");
         }
         catch (JAXBException e){
             log.error("Failed to save weather data due to xml parsing error.", e);

@@ -1,11 +1,8 @@
 package org.homework.fujitsuhomework2024.controller;
 
-import org.homework.fujitsuhomework2024.enums.City;
-import org.homework.fujitsuhomework2024.enums.VehicleType;
 import org.homework.fujitsuhomework2024.model.BusinessRules;
 import org.homework.fujitsuhomework2024.model.BusinessRulesDto;
 import org.homework.fujitsuhomework2024.service.BusinessRulesService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

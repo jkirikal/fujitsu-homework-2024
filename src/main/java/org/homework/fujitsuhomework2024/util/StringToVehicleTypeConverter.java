@@ -1,6 +1,5 @@
 package org.homework.fujitsuhomework2024.util;
 
-import org.homework.fujitsuhomework2024.enums.City;
 import org.homework.fujitsuhomework2024.enums.VehicleType;
 import org.springframework.core.convert.converter.Converter;
 

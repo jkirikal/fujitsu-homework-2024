@@ -1,3 +1,7 @@
+## The H2 database
+- **Username:** sa
+- **Password:** password
+
 ## Fee Calculation API
 This section outlines the API endpoint provided by the Fee Calculation service. This service calculates and retrieves delivery fees for various vehicle types in specified cities at given times.
 
@@ -6,11 +10,11 @@ This section outlines the API endpoint provided by the Fee Calculation service. 
 - **URL:** `/api`
 - **Method:** `GET`
 - **Description:** Calculates the delivery fee for a specific vehicle type in a given city at a specified date and time.
-  If the date and time are left unspecified, the delivery fee is calculated based on the latest weather data.
+  If the date and time are left unspecified, the delivery fee is calculated based on the latest weather data. The business rules are also determined by the specified time.
 - **Query Parameters:**
-  - `City` (**required**): The city for which the delivery fee is calculated. Acceptable values are: "Tallinn", "Tartu", "Pärnu".
-  - `Vehicle type` (**required**): The type of vehicle for which the delivery fee is being calculated. Acceptable values are: "Car", "Scooter", "Bike"
-  - `Datetime` (**optional**): The date and time for which the delivery fee is calculated. The format is: "dd-MM-yyyy-HH:mm", for example "17-03-2024-13:00"
+  - `City` (**required**): The city for which the delivery fee is calculated. Acceptable values are: `Tallinn`, `Tartu`, `Pärnu`.
+  - `Vehicle type` (**required**): The type of vehicle for which the delivery fee is being calculated. Acceptable values are: `Car`, `Scooter`, `Bike`
+  - `Datetime` (**optional**): The date and time for which the delivery fee is calculated. The format is: `dd-MM-yyyy-HH:mm`, for example `17-03-2024-13:00`
 - **Response:**
   - **Success:**
     - **Code:** `200 OK`

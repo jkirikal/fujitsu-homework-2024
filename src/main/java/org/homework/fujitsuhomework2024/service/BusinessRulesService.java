@@ -6,15 +6,15 @@ import org.homework.fujitsuhomework2024.model.BusinessRulesDto;
 import org.homework.fujitsuhomework2024.repository.BusinessRulesRepository;
 import org.homework.fujitsuhomework2024.util.BusinessRulesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Order(1)
 @Service
 public class BusinessRulesService {
 
@@ -77,7 +77,7 @@ public class BusinessRulesService {
      * @return The matching BusinessRules entity.
      */
     public BusinessRules BusinessRulesByTimestamp(Timestamp timestamp){
-        timestamp.setMinutes(timestamp.getMinutes()+1);
+        timestamp.setSeconds(timestamp.getSeconds()+5);
         return businessRulesRepository.findBusinessRulesByTimestamp(timestamp);
     }
 

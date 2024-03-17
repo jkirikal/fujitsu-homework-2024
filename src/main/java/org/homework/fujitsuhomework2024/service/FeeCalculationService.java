@@ -5,8 +5,6 @@ import org.homework.fujitsuhomework2024.enums.VehicleType;
 import org.homework.fujitsuhomework2024.errors.ForbiddenVehicleTypeError;
 import org.homework.fujitsuhomework2024.model.BusinessRules;
 import org.homework.fujitsuhomework2024.model.Station;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
